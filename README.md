@@ -16,21 +16,20 @@ $ npm install
 É necessário configurar o `.env` para se conectar ao banco de dados com os seguintes dados.
 
 ```
-TYPEORM_CONNECTION=postgres
-TYPEORM_HOST=                         #Host do postgres
-TYPEORM_PORT=                         #Porta do posgres
-TYPEORM_USERNAME=                     #Username do postgres
-TYPEORM_PASSWORD=                     #Senha do postgres
-TYPEORM_DATABASE=                     #Nome do banco de dados
-TYPEORM_ENTITIES=dist/**/*.entity.js
-TYPEORM_MIGRATIONS=dist/migrations/*.js
-TYPEORM_MIGRATIONS_RUN=true
+DB_DATABASE=
+DB_HOST=
+DB_LOGGING="false"
+DB_MIGRATIONS_RUN="true"
+DB_PASSWORD=
+DB_PORT="5432"
+DB_SSL="false"
+DB_USERNAME=
 ```
 
 Após `.env` configurado, rodar migrations para criação de tabelas no banco de dados.
 
 ```bash
-$ typeorm migration:run
+$ npx typeorm migration:run
 
 ```
 

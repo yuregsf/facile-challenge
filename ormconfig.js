@@ -8,7 +8,7 @@ module.exports = {
   logging: process.env.DB_LOGGING,
   entities: ["dist/**/*.entity.js"],
   migrations: ["dist/migrations/*.js"],
-  migrations_run: process.env.DB_MIGRATIONS_RUN,
+  migrations_run: process.env.DB_MIGRATIONS_RUN === 'true',
   ssl: process.env.DB_SSL === 'true'
       ? {
         rejectUnauthorized: false,
