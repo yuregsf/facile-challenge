@@ -1,16 +1,15 @@
 module.exports = {
-  type: process.env.CONNECTION,
-  host: process.env.HOST,
-  port: process.env.PORT,
-  username: process.env.USERNAME,
-  password: process.env.PASSWORD,
-  database: process.env.DATABASE,
-  logging: process.env.LOGGING,
-  entities: [process.env.ENTITIES],
-  migrations: [process.env.MIGRATIONS],
-  migrations_run: process.env.MIGRATIONS_RUN,
-  ssl:
-    process.env.SSL === 'true'
+  type: "posgres",
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+  logging: process.env.DB_LOGGING,
+  entities: ["dist/**/*.entity.js"],
+  migrations: ["dist/migrations/*.js"],
+  migrations_run: process.env.DB_MIGRATIONS_RUN,
+  ssl: process.env.DB_SSL === 'true'
       ? {
         rejectUnauthorized: false,
       }
